@@ -1,0 +1,22 @@
+{
+  "name": "nbabcock-toolkit",
+  "version": "1.0.0",
+  "description": "A copy-and-paste library of useful typescript functions and components.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nathanbabcock/nbabcock-toolkit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nathanbabcock/nbabcock-toolkit/issues"
+  },
+  "homepage": "https://github.com/nathanbabcock/nbabcock-toolkit#readme",
+  "dependencies": {
+    "react": "^17.0.2"
+  }
+}
