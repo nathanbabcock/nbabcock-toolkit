@@ -2,7 +2,9 @@ import { createStore } from 'solid-js/store'
 
 /**
  * Identical API to Solid Store, but wrapped with read/write to/from localStorage
- * 
+ *
+ * @see https://github.com/solidjs-community/solid-primitives/issues/205
+ *
  * @param key unique string identifier to use for localStorage
  * @param storeArg same as Solid Store
  * @param options same as Solid Store
