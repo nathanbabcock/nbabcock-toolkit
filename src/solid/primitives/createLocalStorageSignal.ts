@@ -14,7 +14,8 @@ export default function createLocalStorageSignal<T>(key: string, initial: T): [A
 
   const setValue = ((arg: any) => {
     const v = _setValue(arg)
-    localStorage.setItem(key, JSON.stringify(v))
+    if (v === undefined || v === null) localStorage.removeItem(key)
+    else localStorage.setItem(key, JSON.stringify(v))
     return v
   }) as typeof _setValue
 
