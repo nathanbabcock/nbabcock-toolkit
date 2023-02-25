@@ -1,2 +1,3 @@
-const clamp = (num: number, min: number, max: number) => Math.min(Math.max(num, min), max)
+const clamp = (num: number, [min, max]: [number, number]) =>
+  Math.min(Math.max(num, min), max)
 export default clamp
