@@ -1,10 +1,7 @@
 import { type RefObject, useEffect } from 'react'
 
 /** e.g. `useEventListener(document, "click", () => {})` */
-export function useEventListener<
-  TTarget extends EventTarget = EventTarget,
-  TType extends string = string
->(
+export function useEventListener<TTarget extends EventTarget, TType extends string>(
   targetOrRef: TTarget | RefObject<TTarget>,
   type: TType,
   listener: Listener<TTarget, TType>,
@@ -20,10 +17,7 @@ export function useEventListener<
 // Provide event typesafety via reverse mapped types:
 // - https://github.com/alexreardon/bind-event-listener/blob/master/src/types.ts
 // - https://portal.gitnation.org/contents/infer-multiple-things-at-once-with-reverse-mapped-types
-type InferEvent<
-  TTarget,
-  TType extends string
-> = `on${TType}` extends keyof TTarget
+type InferEvent<TTarget, TType extends string> = `on${TType}` extends keyof TTarget
   ? Parameters<Extract<TTarget[`on${TType}`], UnknownFunction>>[0]
   : Event
 
