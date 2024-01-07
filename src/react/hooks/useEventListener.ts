@@ -1,15 +1,23 @@
-import { RefObject, useEffect } from 'react'
+import { type RefObject, useEffect } from 'react'
 
-export function useEventListener<T extends EventTarget, E extends Event>(
-  elementOrRef: T | RefObject<T>,
-  eventName: string,
-  handler: (event: E) => void
+// "Reverse mapped type" approach from this video: https://portal.gitnation.org/contents/infer-multiple-things-at-once-with-reverse-mapped-types
+type PossibleEventType<K> = K extends `on${infer Type}` ? Type : never
+type GetEvent<Name> = Name extends keyof HTMLElementEventMap
+  ? HTMLElementEventMap[Name]
+  : Event
+
+export function useEventListener<
+  T extends EventTarget,
+  E extends PossibleEventType<keyof T>
+>(
+  targetOrRef: T | RefObject<T>,
+  eventName: E,
+  handler: (event: GetEvent<E>) => void
 ) {
-  useEffect(() => {
-    const element =
-      'current' in elementOrRef ? elementOrRef.current : elementOrRef
+  return useEffect(() => {
+    const element = 'current' in targetOrRef ? targetOrRef.current : targetOrRef
     element?.addEventListener(eventName, handler as EventListener)
     return () =>
       element?.removeEventListener(eventName, handler as EventListener)
-  }, [elementOrRef, eventName, handler])
+  }, [targetOrRef, eventName, handler])
 }
