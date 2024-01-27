@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+PACKAGE_REGEX="(package\.json)|(yarn\.lock)"
+INSTALL_COMMAND="yarn --cwd desktop-experience install --color always"
+
+echo "Running post-merge hook 🪝"
+git diff --name-only $1 $2 | grep -Eq "$PACKAGE_REGEX"
+EXIT_STATUS=$?
+
+if [ $EXIT_STATUS -eq 0 ]; then
+  echo "Packages changed; running command:"
+  echo "> $INSTALL_COMMAND"
+
+  # Run the command, capture stdout and stderr separately
+  { $INSTALL_COMMAND 2>&1 1>&3 | while IFS= read -r line; do
+      # Print each line immediately
+      echo "$line" >/dev/tty
+    done
+  } 3>&1
+
+  echo "Done ✅"
+else
+  echo "Packages already up-to-date 👍"
+fi
