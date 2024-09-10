@@ -88,6 +88,7 @@ export class Throttle {
 
   private doInvoke(fn: AnyFn) {
     this.lastInvokeTime = Date.now()
+    this.timeoutHandle = undefined
     this.nextFn = undefined
     fn()
   }
