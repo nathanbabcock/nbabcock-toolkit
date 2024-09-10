@@ -1,65 +1,78 @@
-lockfileVersion: '6.0'
+lockfileVersion: '9.0'
 
 settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-devDependencies:
-  '@types/node':
-    specifier: ^20.4.7
-    version: 20.4.7
-  react:
-    specifier: ^18.2.0
-    version: 18.2.0
-  solid-js:
-    specifier: ^1.7.9
-    version: 1.7.9
-  typescript:
-    specifier: ^5.1.6
-    version: 5.1.6
+importers:
+
+  .:
+    devDependencies:
+      '@types/node':
+        specifier: ^20.4.7
+        version: 20.4.7
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      solid-js:
+        specifier: ^1.7.9
+        version: 1.7.9
+      typescript:
+        specifier: ^5.1.6
+        version: 5.1.6
 
 packages:
 
-  /@types/node@20.4.7:
+  '@types/node@20.4.7':
     resolution: {integrity: sha512-bUBrPjEry2QUTsnuEjzjbS7voGWCc30W0qzgMf90GPeDGFRakvrz47ju+oqDAKCXLUCe39u57/ORMl/O/04/9g==}
-    dev: true
 
-  /csstype@3.1.2:
+  csstype@3.1.2:
     resolution: {integrity: sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==}
-    dev: true
 
-  /js-tokens@4.0.0:
+  js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
-    dev: true
 
-  /loose-envify@1.4.0:
+  loose-envify@1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
     hasBin: true
-    dependencies:
-      js-tokens: 4.0.0
-    dev: true
 
-  /react@18.2.0:
+  react@18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
     engines: {node: '>=0.10.0'}
-    dependencies:
-      loose-envify: 1.4.0
-    dev: true
 
-  /seroval@0.5.1:
+  seroval@0.5.1:
     resolution: {integrity: sha512-ZfhQVB59hmIauJG5Ydynupy8KHyr5imGNtdDhbZG68Ufh1Ynkv9KOYOAABf71oVbQxJ8VkWnMHAjEHE7fWkH5g==}
     engines: {node: '>=10'}
-    dev: true
 
-  /solid-js@1.7.9:
+  solid-js@1.7.9:
     resolution: {integrity: sha512-p1orXnauMQmwYULZtuPAXyKNRGEN2qh60kLX4YURa3jvulxAqjlh2kWEljXCtAVR6UZPC16NXdj9ASHcH383Fg==}
-    dependencies:
-      csstype: 3.1.2
-      seroval: 0.5.1
-    dev: true
 
-  /typescript@5.1.6:
+  typescript@5.1.6:
     resolution: {integrity: sha512-zaWCozRZ6DLEWAWFrVDz1H6FVXzUSfTy5FUMWsQlU8Ym5JP9eO4xkTIROFCQvhQf61z6O/G6ugw3SgAnvvm+HA==}
     engines: {node: '>=14.17'}
     hasBin: true
-    dev: true
+
+snapshots:
+
+  '@types/node@20.4.7': {}
+
+  csstype@3.1.2: {}
+
+  js-tokens@4.0.0: {}
+
+  loose-envify@1.4.0:
+    dependencies:
+      js-tokens: 4.0.0
+
+  react@18.2.0:
+    dependencies:
+      loose-envify: 1.4.0
+
+  seroval@0.5.1: {}
+
+  solid-js@1.7.9:
+    dependencies:
+      csstype: 3.1.2
+      seroval: 0.5.1
+
+  typescript@5.1.6: {}
