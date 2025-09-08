@@ -14,9 +14,9 @@
   },
   "homepage": "https://github.com/nathanbabcock/nbabcock-toolkit#readme",
   "devDependencies": {
-    "@types/node": "^20.4.7",
-    "react": "^18.2.0",
-    "solid-js": "^1.7.9",
-    "typescript": "^5.1.6"
+    "@types/node": "24.3.1",
+    "react": "19.1.1",
+    "solid-js": "^1.9.9",
+    "typescript": "^5.9.2"
   }
 }
