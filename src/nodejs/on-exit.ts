@@ -1,4 +1,4 @@
-function onExit(fn: () => void) {
+export function onExit(fn: () => void) {
   // do something when app is closing
   process.on('exit', fn)
 
