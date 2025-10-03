@@ -5,6 +5,11 @@ export type AspectRatio = {
   height: number
 }
 
+/**
+ * @deprecated either use a `CallbackRef` on the video element, or require a
+ * `video` as a prop. Otherwise, this code breaks any time the video unmounts
+ * and remounts.
+ */
 export function useVideoAspectRatio(videoRef: RefObject<HTMLVideoElement | null>) {
   const [aspectRatio, setAspectRatio] = useReducer((_?: AspectRatio, aspectRatio?: AspectRatio) => {
     if (!aspectRatio) return undefined
