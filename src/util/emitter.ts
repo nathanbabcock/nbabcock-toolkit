@@ -1,13 +1,13 @@
-export function emitter() {
-  let listeners = new Set<() => void>()
+export function createEmitter<T = void>() {
+  const listeners = new Set<(event: T) => void>()
   return {
-    emit() {
-      listeners.forEach(listener => listener())
+    emit(value: T) {
+      listeners.forEach(listener => listener(value))
     },
-    on(listener: () => void) {
+    on(listener: (event: T) => void) {
       listeners.add(listener)
     },
-    off(listener: () => void) {
+    off(listener: (event: T) => void) {
       listeners.delete(listener)
     },
   }
